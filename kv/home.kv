@@ -1,0 +1,1061 @@
+##:kivy
+
+#: import C kivy.utils.get_color_from_hex
+#: import NoTransition kivy.uix.screenmanager.NoTransition
+#: import Factory kivy.factory.Factory
+#############################################################################
+<Sm>:
+    Home:
+
+#  ##########################################################################
+# ModalView keyboard Acesso
+<KbDesbloqueio>:
+    id: _kb_desbloqueio
+    auto_dismiss: False
+    size_hint: (0.5, 0.5)
+    title: ''
+    separator_color: (0,0,0,0)
+    background: 'imagens/diversos/black.png'
+    background_color: (0,0,0,0)
+    FloatLayout:
+        pos_hint: {'center_x':0.5, 'center_y':0.5}
+        size_hint: (0.5, 0.5)
+        canvas:
+            Color:
+                rgba: 0.46,0.96,0.96,1
+            # linha externa da tela
+            Line:
+                rounded_rectangle: (_kb_desbloqueio.width/2, _kb_desbloqueio.height/2, _kb_desbloqueio.width, _kb_desbloqueio.height, 10, 100)
+            # caixa de texto senha
+            Line:
+                rounded_rectangle: (_kb_desbloqueio.width/1.2, _kb_desbloqueio.height/0.85, _kb_desbloqueio.width/3, _kb_desbloqueio.height/10, 10, 100)
+
+            # desenho teclado
+            # numero 7
+            Line:
+                rounded_rectangle: (_kb_desbloqueio.width/1.675, _kb_desbloqueio.height/1.0, _kb_desbloqueio.width/4, _kb_desbloqueio.height/10, 10, 100)
+            # numero 8
+            Line:
+                rounded_rectangle: (_kb_desbloqueio.width/1.15, _kb_desbloqueio.height/1.0, _kb_desbloqueio.width/4, _kb_desbloqueio.height/10, 10, 100)
+            # numero 9
+            Line:
+                rounded_rectangle: (_kb_desbloqueio.width/0.875, _kb_desbloqueio.height/1.0, _kb_desbloqueio.width/4, _kb_desbloqueio.height/10, 10, 100)
+            # numero 4
+            Line:
+                rounded_rectangle: (_kb_desbloqueio.width/1.675, _kb_desbloqueio.height/1.17, _kb_desbloqueio.width/4, _kb_desbloqueio.height/10, 10, 100)
+            # numero 5
+            Line:
+                rounded_rectangle: (_kb_desbloqueio.width/1.15, _kb_desbloqueio.height/1.17, _kb_desbloqueio.width/4, _kb_desbloqueio.height/10, 10, 100)
+            # numero 6
+            Line:
+                rounded_rectangle: (_kb_desbloqueio.width/0.875, _kb_desbloqueio.height/1.17, _kb_desbloqueio.width/4, _kb_desbloqueio.height/10, 10, 100)
+            # numero 1
+            Line:
+                rounded_rectangle: (_kb_desbloqueio.width/1.675, _kb_desbloqueio.height/1.40, _kb_desbloqueio.width/4, _kb_desbloqueio.height/10, 10, 100)
+            # numero 2
+            Line:
+                rounded_rectangle: (_kb_desbloqueio.width/1.15, _kb_desbloqueio.height/1.40, _kb_desbloqueio.width/4, _kb_desbloqueio.height/10, 10, 100)
+            # numero 3
+            Line:
+                rounded_rectangle: (_kb_desbloqueio.width/0.875, _kb_desbloqueio.height/1.40, _kb_desbloqueio.width/4, _kb_desbloqueio.height/10, 10, 100)
+            # numero 0
+            Line:
+                rounded_rectangle: (_kb_desbloqueio.width/1.675, _kb_desbloqueio.height/1.76, _kb_desbloqueio.width/4, _kb_desbloqueio.height/10, 10, 100)
+            # cancela
+            Line:
+                rounded_rectangle: (_kb_desbloqueio.width/1.15, _kb_desbloqueio.height/1.76, _kb_desbloqueio.width/4, _kb_desbloqueio.height/10, 10, 100)
+            # confirma
+            Line:
+                rounded_rectangle: (_kb_desbloqueio.width/0.875, _kb_desbloqueio.height/1.76, _kb_desbloqueio.width/4, _kb_desbloqueio.height/10, 10, 100)
+
+        Label:
+            id: _cabecalho_kb_desbloqueio
+            text: root.txt_cabecalho
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.5, 'center_y':1.2}
+            font_size: _kb_desbloqueio.height/20
+            halign: 'center'
+
+        Label:
+            id: _cod_kb_desbloqueio
+            text: root.txt_acesso_usu_view
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.5, 'center_y':0.94}
+            font_size: _kb_desbloqueio.height/16
+            halign: 'center'
+
+        Button:
+            text: '7'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_desbloqueio.width/1.63, _kb_desbloqueio.height/0.99
+            font_size: _kb_desbloqueio.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('7')
+        Button:
+            text: '8'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_desbloqueio.width/1.135, _kb_desbloqueio.height/0.99
+            font_size: _kb_desbloqueio.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('8')
+        Button:
+            text: '9'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_desbloqueio.width/0.865, _kb_desbloqueio.height/0.99
+            font_size: _kb_desbloqueio.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('9')
+        Button:
+            text: '4'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_desbloqueio.width/1.63, _kb_desbloqueio.height/1.155
+            font_size: _kb_desbloqueio.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('4')
+        Button:
+            text: '5'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_desbloqueio.width/1.135, _kb_desbloqueio.height/1.155
+            font_size: _kb_desbloqueio.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('5')
+        Button:
+            text: '6'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_desbloqueio.width/0.865, _kb_desbloqueio.height/1.155
+            font_size: _kb_desbloqueio.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('6')
+        Button:
+            text: '1'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_desbloqueio.width/1.63, _kb_desbloqueio.height/1.38
+            font_size: _kb_desbloqueio.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('1')
+        Button:
+            text: '2'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_desbloqueio.width/1.135, _kb_desbloqueio.height/1.38
+            font_size: _kb_desbloqueio.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('2')
+        Button:
+            text: '3'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_desbloqueio.width/0.865, _kb_desbloqueio.height/1.38
+            font_size: _kb_desbloqueio.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('3')
+        Button:
+            text: '0'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_desbloqueio.width/1.63, _kb_desbloqueio.height/1.725
+            font_size: _kb_desbloqueio.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('0')
+        Button:
+            text: 'CANCELA'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_desbloqueio.width/1.135, _kb_desbloqueio.height/1.725
+            font_size: _kb_desbloqueio.height/12
+            halign: 'center'
+            on_release: root.dismiss()
+        Button:
+            text: 'CONFIRMA'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_desbloqueio.width/0.865, _kb_desbloqueio.height/1.725
+            font_size: _kb_desbloqueio.height/12
+            halign: 'center'
+            on_release: root.ajusta_st_alr_desbloqueio()
+                #if root.acesso_confirmado == True and root.conta_tentativas <= 3: root.ajusta_st_alr(1)
+                #elif root.acesso_confirmado == False and root.conta_tentativas <= 3: root.ajusta_st_alr(2)
+
+
+####################################################################################################
+
+<SpButton@Button>:
+    source: None
+    background_color: 0,0,0,0
+    AsyncImage:
+        source: root.source
+        pos: root.pos
+        size: root.size
+
+<AlrButton@Button>:
+    source: None
+    background_color: 0,0,0,0
+    AsyncImage:
+        source: root.source
+        pos: root.pos
+        size: root.size
+
+<AtivaAlr@Button>:
+    source: None
+    background_color: 0,0,0,0
+    anim_delay: 0.25
+    AsyncImage:
+        source: root.source
+        pos: root.pos
+        size: root.size
+        anim_delay: root.anim_delay
+
+<VisualAlr@Button>:
+    source: None
+    background_color: 0,0,0,0
+    anim_delay: 0.25
+    AsyncImage:
+        source: root.source
+        pos: root.pos
+        size: root.size
+        anim_delay: root.anim_delay
+
+
+# ###########################################################################        
+<VisaoGeralAlr@ModalView>:
+    id: _visao_geral_alr
+    auto_dismiss: True
+    size_hint: (0.7, 0.6)
+    title: ''
+    separator_color: (0,0,0,0)
+    background: 'imagens/diversos/black.png'
+    background_color: (0,0,0,0)
+    FloatLayout:
+        pos_hint: {'center_x':0.5, 'center_y':0.5}
+        size_hint: (0.7, 0.7)
+        canvas:
+            Color:
+                rgba: 0.46,0.96,0.96,1
+            # linha externa da tela
+            Line:
+                rounded_rectangle: (_visao_geral_alr.width/4.65, _visao_geral_alr.height/3.0, _visao_geral_alr.width, _visao_geral_alr.height, 10, 100)
+
+        Label:
+            text: 'VISAO GERAL'
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.5, 'center_y':1.1}
+            font_size: _visao_geral_alr.height/20
+            halign: 'center'
+
+
+# ###########################################################################        
+
+<AcessoAreas@ModalView>:
+    id: _acesso_areas
+    auto_dismiss: True
+    size_hint: (0.7, 0.6)
+    title: ''
+    separator_color: (0,0,0,0)
+    background: 'imagens/diversos/black.png'
+    background_color: (0,0,0,0)
+    FloatLayout:
+        pos_hint: {'center_x':0.5, 'center_y':0.5}
+        size_hint: (0.7, 0.7)
+        canvas:
+            Color:
+                rgba: 0.46,0.96,0.96,1
+            # linha externa da tela
+            Line:
+                rounded_rectangle: (_acesso_areas.width/4.65, _acesso_areas.height/3.0, _acesso_areas.width, _acesso_areas.height, 10, 100)
+
+        Label:
+            text: 'CONTROLE DE ACESSO'
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.5, 'center_y':1.1}
+            font_size: _acesso_areas.height/20
+            halign: 'center'
+
+# ###########################################################################        
+
+<IluminacaoAreas@ModalView>:
+    id: _iluminacao_areas
+    auto_dismiss: True
+    size_hint: (0.7, 0.6)
+    title: ''
+    separator_color: (0,0,0,0)
+    background: 'imagens/diversos/black.png'
+    background_color: (0,0,0,0)
+    FloatLayout:
+        pos_hint: {'center_x':0.5, 'center_y':0.5}
+        size_hint: (0.7, 0.7)
+        canvas:
+            Color:
+                rgba: 0.46,0.96,0.96,1
+            # linha externa da tela
+            Line:
+                rounded_rectangle: (_iluminacao_areas.width/4.65, _iluminacao_areas.height/3.0, _iluminacao_areas.width, _iluminacao_areas.height, 10, 100)
+
+        Label:
+            text: 'CONTROLE DE ILUMINAÇÃO'
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.5, 'center_y':1.1}
+            font_size: _iluminacao_areas.height/20
+            halign: 'center'
+
+# ###########################################################################        
+
+<GadgetsCtrl@ModalView>:
+    id: _gadgets_ctrl
+    auto_dismiss: True
+    size_hint: (0.7, 0.6)
+    title: ''
+    separator_color: (0,0,0,0)
+    background: 'imagens/diversos/black.png'
+    background_color: (0,0,0,0)
+    FloatLayout:
+        pos_hint: {'center_x':0.5, 'center_y':0.5}
+        size_hint: (0.7, 0.7)
+        canvas:
+            Color:
+                rgba: 0.46,0.96,0.96,1
+            # linha externa da tela
+            Line:
+                rounded_rectangle: (_gadgets_ctrl.width/4.65, _gadgets_ctrl.height/3.0, _gadgets_ctrl.width, _gadgets_ctrl.height, 10, 100)
+
+        Label:
+            text: 'CONTROLE MULTIMIDIA'
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.5, 'center_y':1.1}
+            font_size: _gadgets_ctrl.height/20
+            halign: 'center'
+
+# ###########################################################################        
+
+<Informacao>:
+    id: _informacao_ctrl
+    auto_dismiss: True
+    size_hint: (0.7, 0.6)
+    title: ''
+    separator_color: (0,0,0,0)
+    background: 'imagens/diversos/black.png'
+    background_color: (0,0,0,0)
+    FloatLayout:
+        pos_hint: {'center_x':0.5, 'center_y':0.5}
+        size_hint: (0.7, 0.7)
+        canvas:
+            Color:
+                rgba: 0.46,0.96,0.96,1
+            # linha externa da tela
+            Line:
+                rounded_rectangle: (_informacao_ctrl.width/4.65, _informacao_ctrl.height/3.0, _informacao_ctrl.width, _informacao_ctrl.height, 10, 100)
+
+        Label:
+            text: 'INFORMAÇÕES SOBRE O PRODUTO'
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.5, 'center_y':1.1}
+            font_size: _informacao_ctrl.height/20
+            halign: 'center'
+
+        ScrollView:
+            id: _scr_text
+            bar_color: 0.46,0.96,0.96,1
+            size_hint: (1.0, 0.9)
+            size: (_informacao_ctrl.width, _informacao_ctrl.height)
+            pos_hint: {'center_x':0.5, 'center_y':0.5}
+            Label:
+                text: root.txt_informacao
+                text_size: (_scr_text.width/1.2, None)
+                font_size: _scr_text.height/12
+                font_hinting: 'light'
+                halign: 'justify'
+                line_height: 1.25
+                color: 0.46,0.96,0.96,1
+                pos_hint: {'center_x':0.5, 'center_y':0.5}
+                size_hint: (1.0, 6.0)
+
+# ###########################################################################        
+
+<SetUpAlrm>:
+    id: _setupalrm
+    auto_dismiss: True
+    size_hint: (0.7, 0.6)
+    title: ''
+    separator_color: (0,0,0,0)
+    background: 'imagens/diversos/black.png'
+    background_color: (0,0,0,0)
+    FloatLayout:
+        pos_hint: {'center_x':0.5, 'center_y':0.5}
+        size_hint: (0.7, 0.7)
+        canvas:
+            Color:
+                rgba: 0.46,0.96,0.96,1
+            # DESENHA LINHA EXTERNA DA TELA
+            Line:
+                rounded_rectangle: (_setupalrm.width/4.65, _setupalrm.height/3.0, _setupalrm.width, _setupalrm.height, 10, 100)
+            # SET SENSOR
+            Line:
+                rounded_rectangle: (_setupalrm.width/4.45, _setupalrm.height/2.5, _setupalrm.width/3.4, _setupalrm.height/1.4, 10, 100)
+            # SET ALARM AUTO
+            Line:
+                rounded_rectangle: (_setupalrm.width/1.83, _setupalrm.height/2.5, _setupalrm.width/2.98, _setupalrm.height/1.4, 10, 100)
+            # hora inicio
+            Line:
+                rounded_rectangle: (_setupalrm.width/1.65, _setupalrm.height/1.76, _setupalrm.width/20, _setupalrm.height/12, 4, 100)
+            # hora fim
+            Line:
+                rounded_rectangle: (_setupalrm.width/1.295, _setupalrm.height/1.76, _setupalrm.width/20, _setupalrm.height/12, 4, 100)
+            # SET PRESENCE SIMULATOR
+            Line:
+                rounded_rectangle: (_setupalrm.width/1.1, _setupalrm.height/2.5, _setupalrm.width/3.4, _setupalrm.height/1.4, 10, 100)
+
+        Label:
+            text: 'AJUSTES DO ALARME'
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.5, 'center_y':1.1}
+            font_size: _setupalrm.height/20
+            halign: 'center'
+
+        # Set sensor/aciona
+        Label:
+            text: 'SET SENSOR'
+            color: 0.46,0.96,0.96,1
+            pos: (_setupalrm.width/3.0, _setupalrm.height/0.95)
+            size_hint: (0.1, 0.1)
+            font_size: _setupalrm.height/22
+            halign: 'left'
+
+        # Cerca Eletrica
+        CheckBox:
+            id: _chk_cerca
+            pos: (_setupalrm.width/4.5, _setupalrm.height/1.05)
+            color: 0.46,0.96,0.96,1
+            size_hint: (0.1, 0.1)
+            on_press: print self.active
+        Label:
+            text: 'CERCA ELÉTRICA'
+            color: 0.46,0.96,0.96,1
+            pos: (_setupalrm.width/3.0, _setupalrm.height/1.05)
+            size_hint: (0.1, 0.1)
+            font_size: _setupalrm.height/22
+            halign: 'left'
+            
+        # Sirene
+        CheckBox:
+            id: _chk_sirene
+            pos: (_setupalrm.width/4.5, _setupalrm.height/1.2)
+            color: 0.46,0.96,0.96,1
+            size_hint: (0.1, 0.1)
+            on_press: print self.active
+        Label:
+            text: 'SIRENE'
+            color: 0.46,0.96,0.96,1
+            pos: (_setupalrm.width/3.45, _setupalrm.height/1.2)
+            size_hint: (0.1, 0.1)
+            font_size: _setupalrm.height/22
+            halign: 'left'
+
+        # Cameras
+        CheckBox:
+            id: _chk_cameras
+            pos: (_setupalrm.width/4.5, _setupalrm.height/1.4)
+            color: 0.46,0.96,0.96,1
+            size_hint: (0.1, 0.1)
+            on_press: print self.active
+        Label:
+            text: 'CAMERAS'
+            color: 0.46,0.96,0.96,1
+            pos: (_setupalrm.width/3.3, _setupalrm.height/1.4)
+            size_hint: (0.1, 0.1)
+            font_size: _setupalrm.height/22
+            halign: 'left'
+
+        # IRD
+        CheckBox:
+            id: _chk_ird
+            pos: (_setupalrm.width/4.5, _setupalrm.height/1.7)
+            color: 0.46,0.96,0.96,1
+            size_hint: (0.1, 0.1)
+            on_press: print self.active
+        Label:
+            text: 'SENSOR IRD'
+            color: 0.46,0.96,0.96,1
+            pos: (_setupalrm.width/3.2, _setupalrm.height/1.7)
+            size_hint: (0.1, 0.1)
+            font_size: _setupalrm.height/22
+            halign: 'left'
+
+        # USOM
+        CheckBox:
+            id: _chk_usom
+            pos: (_setupalrm.width/4.5, _setupalrm.height/2.15)
+            color: 0.46,0.96,0.96,1
+            size_hint: (0.1, 0.1)
+            on_press: print self.active
+        Label:
+            text: 'SENSOR USOM'
+            color: 0.46,0.96,0.96,1
+            pos: (_setupalrm.width/3.1, _setupalrm.height/2.15)
+            size_hint: (0.1, 0.1)
+            font_size: _setupalrm.height/22
+            halign: 'left'
+
+# #######################################################################
+        # Set alarme auto
+        Label:
+            text: 'SET AUTO ALARM'
+            color: 0.46,0.96,0.96,1
+            pos: (_setupalrm.width/1.475, _setupalrm.height/0.95)
+            size_hint: (0.1, 0.1)
+            font_size: _setupalrm.height/22
+            halign: 'left'
+
+        # Auto alarme
+        GridLayout:
+            rows: 1
+            cols: 2
+            pos: (_setupalrm.width/1.8, _setupalrm.height/1.09)
+            col_force_default: False
+            spacing: _setupalrm.height/16
+            size_hint: (None, 0.1)
+
+            CheckBox:
+                id: _chk_set_auto_alrm
+                color: 0.46,0.96,0.96,1
+                size_hint: (0.1, 0.1)
+                on_press: print self.active
+            Label:
+                text: 'AUTO ALARME'
+                color: 0.46,0.96,0.96,1
+                size_hint: (0.1, 0.1)
+                font_size: _setupalrm.height/22
+                halign: 'left'
+
+        # Dias da semana
+        GridLayout:
+            rows: 1
+            cols: 7
+            pos: (_setupalrm.width/1.82, _setupalrm.height/1.2)
+            size_hint: (0.47, 0.1)
+
+            Label:
+                text: 'D'
+                color: 0.46,0.96,0.96,1
+                font_size: _setupalrm.height/22
+                halign: 'left'
+            Label:
+                text: 'S'
+                color: 0.46,0.96,0.96,1
+                font_size: _setupalrm.height/22
+                halign: 'left'
+            Label:
+                text: 'T'
+                color: 0.46,0.96,0.96,1
+                font_size: _setupalrm.height/22
+                halign: 'left'
+            Label:
+                text: 'Q'
+                color: 0.46,0.96,0.96,1
+                font_size: _setupalrm.height/22
+                halign: 'left'
+            Label:
+                text: 'Q'
+                color: 0.46,0.96,0.96,1
+                font_size: _setupalrm.height/22
+                halign: 'left'
+            Label:
+                text: 'S'
+                color: 0.46,0.96,0.96,1
+                font_size: _setupalrm.height/22
+                halign: 'left'
+            Label:
+                text: 'S'
+                color: 0.46,0.96,0.96,1
+                font_size: _setupalrm.height/22
+                halign: 'left'
+
+        GridLayout:
+            rows: 1
+            cols: 7
+            pos: (_setupalrm.width/1.82, _setupalrm.height/1.35)
+            size_hint: (0.47, 0.1)
+
+            #domingo 
+            CheckBox:
+                color: 0.46,0.96,0.96,1
+                size_hint: (0.1, 0.1)
+                on_press: print self.active
+            #segunda
+            CheckBox:
+                color: 0.46,0.96,0.96,1
+                size_hint: (0.1, 0.1)
+                on_press: print self.active
+            #terça
+            CheckBox:
+                color: 0.46,0.96,0.96,1
+                size_hint: (0.1, 0.1)
+                on_press: print self.active
+            #quarta
+            CheckBox:
+                color: 0.46,0.96,0.96,1
+                size_hint: (0.1, 0.1)
+                on_press: print self.active
+            #quinta
+            CheckBox:
+                color: 0.46,0.96,0.96,1
+                size_hint: (0.1, 0.1)
+                on_press: print self.active
+            #sexta
+            CheckBox:
+                color: 0.46,0.96,0.96,1
+                size_hint: (0.1, 0.1)
+                on_press: print self.active
+            #sabado
+            CheckBox:
+                color: 0.46,0.96,0.96,1
+                size_hint: (0.1, 0.1)
+                on_press: print self.active
+
+        GridLayout:
+            rows: 1
+            cols: 2
+            pos: (_setupalrm.width/1.82, _setupalrm.height/1.55)
+            size_hint: (0.47, 0.1)
+
+            #hora inicio alrm 
+            Label:
+                text: 'START'
+                color: 0.46,0.96,0.96,1
+                font_size: _setupalrm.height/22
+                halign: 'left'
+            #hora fim alrm
+            Label:
+                text: 'STOP'
+                color: 0.46,0.96,0.96,1
+                font_size: _setupalrm.height/22
+                halign: 'left'
+
+        GridLayout:
+            rows: 1
+            cols: 2
+            pos: (_setupalrm.width/1.82, _setupalrm.height/1.75)
+            size_hint: (0.47, 0.1)
+            #apr hora inicio alrm 
+            Label:
+                text: '---'
+                color: 0.46,0.96,0.96,1
+                font_size: _setupalrm.height/22
+                halign: 'left'
+            #apr hora fim alrm
+            Label:
+                text: '---'
+                color: 0.46,0.96,0.96,1
+                font_size: _setupalrm.height/22
+                halign: 'left'
+
+        GridLayout:
+            rows: 1
+            cols: 4
+            pos: (_setupalrm.width/1.82, _setupalrm.height/2.05)
+            size_hint: (0.47, 0.1)
+
+            #hora inicio alrm dec
+            AlrButton:
+                source: 'imagens/diversos/left.png'
+                pos_hint: {'center_x':0.3225, 'center_y':0.77}
+                size_hint: 0.35, 0.35 
+                #on_press: root.panic()
+            #hora inicio alrm inc
+            AlrButton:
+                source: 'imagens/diversos/right.png'
+                pos_hint: {'center_x':0.3225, 'center_y':0.77}
+                size_hint: 0.35, 0.35 
+                #on_press: root.panic()
+            #hora fim alrm dec
+            AlrButton:
+                source: 'imagens/diversos/left.png'
+                pos_hint: {'center_x':0.3225, 'center_y':0.77}
+                size_hint: 0.35, 0.35 
+                #on_press: root.panic()
+            #hora fim alrm inc
+            AlrButton:
+                source: 'imagens/diversos/right.png'
+                pos_hint: {'center_x':0.3225, 'center_y':0.77}
+                size_hint: 0.35, 0.35 
+                #on_press: root.panic()
+
+# ###########################################################################        
+# ###########################################################################        
+# ###########################################################################        
+
+# Página Home
+<Home>:
+    name: 'home'
+    on_enter: root.abertura()
+
+    # TELA INICIALIZACAO
+    FloatLayout:
+        canvas:
+            Color:
+                rgba: 0.46,0.96,0.96,1
+            # linha externa da tela
+            Line:
+                rounded_rectangle: (0, 0, root.width, root.height, 10, 100)
+            # quadro rodape
+            Line:
+                rounded_rectangle: (root.width/96, root.height/40, root.width/1.02, root.height/8, 10, 100)
+
+        # Mensagens
+        Label:
+            id: _msg_rodape
+            text: root.msg_rodape
+            color: root.cl_msg_rodape
+            pos_hint: {'center_x':0.5, 'center_y':0.09}
+            font_size: root.height/28
+            halign: 'right'
+
+    # PANIC BUTTON/FIRE ALARM
+    FloatLayout:
+        canvas:
+            Color:
+                rgba: 0.46,0.96,0.96,1
+            # quadro alerta
+            Line:
+                rounded_rectangle: (root.width/4.5, root.height/1.7, root.width/5, root.height/2.75, 10, 100)
+
+        AlrButton:
+            source: 'imagens/diversos/alerta.png'
+            pos_hint: {'center_x':0.3225, 'center_y':0.77}
+            size_hint: 0.35, 0.35 
+            on_press: root.panic()
+
+    # CONFIGURACAO
+    FloatLayout:
+        canvas:
+            Color:
+                rgba: 0.46,0.96,0.96,1
+            # quadro alarme
+            Line:
+                rounded_rectangle: (root.width/1.245, root.height/5.5, root.width/5.35, root.height/8, 10, 100)
+        # Informacoes
+        AlrButton:
+            source: 'imagens/diversos/info.png'
+            pos_hint: {'center_x':0.85, 'center_y':0.25}
+            size_hint: 0.075, 0.075 
+            on_release: Factory.Informacao().open()
+        # Configuracao
+        AlrButton:
+            source: 'imagens/diversos/settings.png'
+            pos_hint: {'center_x':0.9, 'center_y':0.25}
+            size_hint: 0.075, 0.075 
+            #on_press: root.alerta()
+        # Desligar/Power off
+        AlrButton:
+            source: 'imagens/diversos/io.png'
+            pos_hint: {'center_x':0.95, 'center_y':0.25}
+            size_hint: 0.075, 0.075 
+            on_press: exit()
+
+    # ILUMINACAO/PORTAS/GADGETS
+    FloatLayout:
+        canvas:
+            Color:
+                rgba: 0.46,0.96,0.96,1
+            # Iluminacao
+            Line:
+                rounded_rectangle: (root.width/1.245, root.height/1.275, root.width/5.35, root.height/6, 10, 100)
+            # Portas
+            Line:
+                rounded_rectangle: (root.width/1.245, root.height/1.7, root.width/5.35, root.height/6, 10, 100)
+            # Gadgets
+            Line:
+                rounded_rectangle: (root.width/1.245, root.height/2.55, root.width/5.35, root.height/6, 10, 100)
+        # Portas
+        AlrButton:
+            source: 'imagens/diversos/porta_f.png'
+            pos_hint: {'center_x':0.9, 'center_y':0.66}
+            size_hint: 0.1, 0.1 
+            #on_release: Factory.AcessoAreas().open()
+        # Iluminacao
+        AlrButton:
+            source: 'imagens/diversos/lamp.png'
+            pos_hint: {'center_x':0.9, 'center_y':0.87}
+            size_hint: 0.1, 0.1
+            #on_release: Factory.IluminacaoAreas().open()
+        # Gadgets
+        AlrButton:
+            source: 'imagens/diversos/tv.png'
+            pos_hint: {'center_x':0.9, 'center_y':0.47}
+            size_hint: 0.1, 0.1
+            #on_release: Factory.GadgetsCtrl().open()
+
+    # CONTROLE ALARME E STATUS
+    FloatLayout:
+        canvas:
+            Color:
+                rgba: 0.46,0.96,0.96,1
+            # quadro alarme
+            Line:
+                rounded_rectangle: (root.width/4.5, root.height/5.5, root.width/5, root.height/2.75, 10, 100)
+
+        # texto caixa
+        Label:
+            text: 'Alarm Status'
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.32, 'center_y':0.5}
+            font_size: root.height/25
+            halign: 'center'
+            valign: 'middle'
+
+        # Mostra status alarme - liga/desliga alarme
+        AtivaAlr:
+            source: root.mv_alrm
+            anim_delay: 0.025
+            size_hint: 0.2, 0.2
+            pos_hint: {'center_x':0.32, 'center_y':0.375}
+            on_press: 
+                if root.le_st_alr() == 1: root.ajusta_st_alr(2)
+                elif root.le_st_alr() == 2 or root.le_st_alr() == 3: Factory.KbDesbloqueio().open()
+
+
+        # Status diversos do alarme
+        # wifi
+        AlrButton:
+            source: 'imagens/diversos/wifi.png'
+            pos_hint: {'center_x':0.24, 'center_y':0.25}
+            size_hint: 0.05, 0.05 
+
+        # bluetooth
+        AlrButton:
+            source: 'imagens/diversos/bt.png'
+            pos_hint: {'center_x':0.265, 'center_y':0.25}
+            size_hint: 0.05, 0.05 
+
+        # usb
+        AlrButton:
+            source: root.alr_st_img
+            pos_hint: {'center_x':0.29, 'center_y':0.25}
+            size_hint: 0.05, 0.05 
+        
+        # vpn
+        AlrButton:
+            source: 'imagens/diversos/transparente.png'
+            pos_hint: {'center_x':0.315, 'center_y':0.25}
+            size_hint: 0.05, 0.05 
+        
+        # key
+        AlrButton:
+            source: 'imagens/diversos/transparente.png'
+            pos_hint: {'center_x':0.34, 'center_y':0.25}
+            size_hint: 0.05, 0.05 
+        
+        # info
+        AlrButton:
+            source: 'imagens/diversos/settings.png'
+            pos_hint: {'center_x':0.37, 'center_y':0.25}
+            size_hint: 0.05, 0.05
+            on_press: Factory.SetUpAlrm().open()
+        
+        # liga/desliga
+        AlrButton:
+            source: 'imagens/diversos/transparente.png'
+            pos_hint: {'center_x':0.395, 'center_y':0.25}
+            size_hint: 0.05, 0.05 
+
+
+
+
+    # CONTROLE DE ALARME - INDICACAO VISUAL DE ZONAS AFETADAS
+    FloatLayout:
+        canvas:
+            Color:
+                rgba: 0.46,0.96,0.96,1
+            # quadro areas monitoradas
+            Line:
+                rounded_rectangle: (root.width/2.3, root.height/5.5, root.width/2.8, root.height/1.3, 10, 100)
+
+        # Imagem planta animada e estatica
+        VisualAlr:
+            id: _visual_alr
+            source: root.plant_run_img
+            anim_delay: 0.1
+            size_hint: 0.5, 0.5
+            pos_hint: {'x': 0.365, 'y': 0.35}
+            on_release: 
+                if root.open_local == 1: root.open_local = 0
+                elif root.open_local == 0: root.open_local = 1
+
+
+        # Navega zonas
+        # Avanca
+        AlrButton:
+            source: 'imagens/diversos/right.png'
+            pos_hint: {'center_x':0.675, 'center_y':0.25}
+            size_hint: 0.05, 0.05
+            #on_press: root.alerta()
+            #on_release: Factory.VisaoGeralAlr().open()
+
+        # Retrocede
+        AlrButton:
+            source: 'imagens/diversos/left.png'
+            pos_hint: {'center_x':0.525, 'center_y':0.25}
+            size_hint: 0.05, 0.05 
+            #on_press: root.alerta()
+
+        # Msg zonas selecionadas
+        Label:
+            text: 'VISAO GERAL'
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.6, 'center_y':0.25}
+            font_size: root.height/32
+            halign: 'center'
+
+        # Aviso
+        AlrButton:
+            source: 'imagens/diversos/alerta_blue.png'
+            pos_hint: {'center_x':0.735, 'center_y':0.25}
+            size_hint: 0.05, 0.05
+            #on_press: root.alerta()
+
+        # Retrocede
+        AlrButton:
+            source: 'imagens/diversos/cam.png'
+            pos_hint: {'center_x':0.77, 'center_y':0.25}
+            size_hint: 0.05, 0.05 
+            #on_press: root.alerta()
+
+    # INDICADORES DE TEMPERATURA E UMIDADE E BOTOES DE CONTROLE
+    FloatLayout:
+        canvas:
+            # umidade_fundo_indicador
+            Color:
+                rgba: root.cor_fundo_indicador
+            Line:
+                circle: (root.width/9, root.height/3.45, root.height/6, 270, 415)
+                width: root.height/60
+                cap: 'square'
+            # umidade_indicador
+            Color:
+                rgba: root.cor_indicador_u
+            Line:
+                circle: (root.width/9, root.height/3.45, root.height/6, 270, root.umidade_indicada)
+                width: root.height/72
+                cap: 'square'
+
+            # temperatura_fundo_indicador
+            Color:
+                rgba: root.cor_fundo_indicador
+            Line:
+                circle: (root.width/9, root.height/1.45, root.height/6, 270, 415)
+                width: root.height/60
+                cap: 'square'
+                joint: 'bevel'
+            # temperatura_indicador
+            Color:
+                rgba: root.cor_indicador_t
+            Line:
+                circle: (root.width/9, root.height/1.45, root.height/6, 270, root.temperatura_indicada)
+                width: root.height/72
+                cap: 'square'
+                joint: 'bevel'
+
+            # quadro temperatura
+            Color:
+                rgba: 0.46,0.96,0.96,1
+            Line:
+                rounded_rectangle: (root.width/96, root.height/1.7, root.width/5, root.height/2.75, 10, 100)
+
+            # quadro umidade
+            Line:
+                rounded_rectangle: (root.width/96, root.height/5.5, root.width/5, root.height/2.75, 10, 100)
+
+        # Textos de temperatura e umidade
+        Label:
+            text: 'Temperatura ºC'
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.11, 'center_y':0.9}
+            font_size: root.height/25
+            halign: 'center'
+            valign: 'middle'
+        Label:
+            text: 'Umidade %'
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.11, 'center_y':0.5}
+            font_size: root.height/25
+            halign: 'center'
+            valign: 'middle'
+
+        # Mostra temperatura e umidade
+        Label:
+            text: str(root.temperatura_lida) + 'ºC'
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.11, 'center_y':0.77}
+            font_size: root.height/20
+            halign: 'center'
+            valign: 'middle'
+        Label:
+            text: str(root.umidade_lida) + '%'
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.11, 'center_y':0.37}
+            font_size: root.height/20
+            halign: 'center'
+            valign: 'middle'
+
+        # Set point temperarura e umidade
+        Label:
+            text: 'SP: ' + str(root.temperatura_sp) + 'ºC'
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.11, 'center_y':0.7}
+            font_size: root.height/28
+            halign: 'center'
+            valign: 'middle'
+        Label:
+            text: 'SP: ' + str(root.umidade_sp) + '%'
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.11, 'center_y':0.3}
+            font_size: root.height/28
+            halign: 'center'
+            valign: 'middle'
+
+        # Incrementa SP Temperatura
+        SpButton:
+            source: 'imagens/diversos/up.png'
+            pos_hint: {'center_x':0.09, 'center_y':0.625}
+            size_hint: 0.05, 0.05 
+            on_press: root.inc_temperatura()
+
+        # Decrementa SP Temperatura
+        SpButton:
+            source: 'imagens/diversos/down.png'
+            pos_hint: {'center_x':0.13, 'center_y':0.625}
+            size_hint: 0.05, 0.05 
+            on_press: root.dec_temperatura()
+        
+        # Incrementa SP Umidade
+        SpButton:
+            source: 'imagens/diversos/up.png'
+            pos_hint: {'center_x':0.09, 'center_y':0.225}
+            size_hint: 0.05, 0.05 
+            on_press: root.inc_umidade()
+        
+        # Decrementa SP Umidade
+        SpButton:
+            source: 'imagens/diversos/down.png'
+            pos_hint: {'center_x':0.13, 'center_y':0.225}
+            size_hint: 0.05, 0.05 
+            on_press: root.dec_umidade()
+
+#######################################################################

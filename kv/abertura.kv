@@ -1,0 +1,402 @@
+##:kivy
+
+#: import C kivy.utils.get_color_from_hex
+#: import NoTransition kivy.uix.screenmanager.NoTransition
+#: import Factory kivy.factory.Factory
+#: import ModalView kivy.uix.modalview
+#############################################################################
+<Sm>:
+    Abertura:
+
+#  ##########################################################################
+# ModalView keyboard Acesso
+<KbAcesso>:
+    id: _kb_acesso
+    auto_dismiss: True
+    size_hint: (0.5, 0.5)
+    title: ''
+    separator_color: (0,0,0,0)
+    background: 'imagens/diversos/black.png'
+    background_color: (0,0,0,0)
+    FloatLayout:
+        pos_hint: {'center_x':0.5, 'center_y':0.5}
+        size_hint: (0.5, 0.5)
+        canvas:
+            Color:
+                rgba: 0.46,0.96,0.96,1
+            # linha externa da tela
+            Line:
+                rounded_rectangle: (_kb_acesso.width/2, _kb_acesso.height/2, _kb_acesso.width, _kb_acesso.height, 10, 100)
+            # caixa de texto senha
+            Line:
+                rounded_rectangle: (_kb_acesso.width/1.2, _kb_acesso.height/0.85, _kb_acesso.width/3, _kb_acesso.height/10, 10, 100)
+
+            # desenho teclado
+            # numero 7
+            Line:
+                rounded_rectangle: (_kb_acesso.width/1.675, _kb_acesso.height/1.0, _kb_acesso.width/4, _kb_acesso.height/10, 10, 100)
+            # numero 8
+            Line:
+                rounded_rectangle: (_kb_acesso.width/1.15, _kb_acesso.height/1.0, _kb_acesso.width/4, _kb_acesso.height/10, 10, 100)
+            # numero 9
+            Line:
+                rounded_rectangle: (_kb_acesso.width/0.875, _kb_acesso.height/1.0, _kb_acesso.width/4, _kb_acesso.height/10, 10, 100)
+            # numero 4
+            Line:
+                rounded_rectangle: (_kb_acesso.width/1.675, _kb_acesso.height/1.17, _kb_acesso.width/4, _kb_acesso.height/10, 10, 100)
+            # numero 5
+            Line:
+                rounded_rectangle: (_kb_acesso.width/1.15, _kb_acesso.height/1.17, _kb_acesso.width/4, _kb_acesso.height/10, 10, 100)
+            # numero 6
+            Line:
+                rounded_rectangle: (_kb_acesso.width/0.875, _kb_acesso.height/1.17, _kb_acesso.width/4, _kb_acesso.height/10, 10, 100)
+            # numero 1
+            Line:
+                rounded_rectangle: (_kb_acesso.width/1.675, _kb_acesso.height/1.40, _kb_acesso.width/4, _kb_acesso.height/10, 10, 100)
+            # numero 2
+            Line:
+                rounded_rectangle: (_kb_acesso.width/1.15, _kb_acesso.height/1.40, _kb_acesso.width/4, _kb_acesso.height/10, 10, 100)
+            # numero 3
+            Line:
+                rounded_rectangle: (_kb_acesso.width/0.875, _kb_acesso.height/1.40, _kb_acesso.width/4, _kb_acesso.height/10, 10, 100)
+            # numero 0
+            Line:
+                rounded_rectangle: (_kb_acesso.width/1.675, _kb_acesso.height/1.76, _kb_acesso.width/4, _kb_acesso.height/10, 10, 100)
+            # cancela
+            Line:
+                rounded_rectangle: (_kb_acesso.width/1.15, _kb_acesso.height/1.76, _kb_acesso.width/4, _kb_acesso.height/10, 10, 100)
+            # confirma
+            Line:
+                rounded_rectangle: (_kb_acesso.width/0.875, _kb_acesso.height/1.76, _kb_acesso.width/4, _kb_acesso.height/10, 10, 100)
+
+        Label:
+            id: _cabecalho_kb_acesso
+            text: root.txt_cabecalho
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.5, 'center_y':1.2}
+            font_size: _kb_acesso.height/20
+            halign: 'center'
+
+        Label:
+            id: _cod_kb_acesso
+            text: root.txt_acesso_usu_view
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.5, 'center_y':0.94}
+            font_size: _kb_acesso.height/16
+            halign: 'center'
+
+        Button:
+            text: '7'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_acesso.width/1.63, _kb_acesso.height/0.99
+            font_size: _kb_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('7')
+        Button:
+            text: '8'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_acesso.width/1.135, _kb_acesso.height/0.99
+            font_size: _kb_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('8')
+        Button:
+            text: '9'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_acesso.width/0.865, _kb_acesso.height/0.99
+            font_size: _kb_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('9')
+        Button:
+            text: '4'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_acesso.width/1.63, _kb_acesso.height/1.155
+            font_size: _kb_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('4')
+        Button:
+            text: '5'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_acesso.width/1.135, _kb_acesso.height/1.155
+            font_size: _kb_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('5')
+        Button:
+            text: '6'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_acesso.width/0.865, _kb_acesso.height/1.155
+            font_size: _kb_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('6')
+        Button:
+            text: '1'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_acesso.width/1.63, _kb_acesso.height/1.38
+            font_size: _kb_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('1')
+        Button:
+            text: '2'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_acesso.width/1.135, _kb_acesso.height/1.38
+            font_size: _kb_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('2')
+        Button:
+            text: '3'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_acesso.width/0.865, _kb_acesso.height/1.38
+            font_size: _kb_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('3')
+        Button:
+            text: '0'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_acesso.width/1.63, _kb_acesso.height/1.725
+            font_size: _kb_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_keypress('0')
+        Button:
+            text: 'CANCELA'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_acesso.width/1.135, _kb_acesso.height/1.725
+            font_size: _kb_acesso.height/12
+            halign: 'center'
+            on_release: root.dismiss()
+        Button:
+            text: 'CONFIRMA'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_acesso.width/0.865, _kb_acesso.height/1.725
+            font_size: _kb_acesso.height/12
+            halign: 'center'
+            on_press: root.dismiss()
+            on_release: app.root.switch_to('home') if root.acesso_confirmado else root.dismiss()
+
+####################################################################################################
+
+# ModalView keyboard Primeiro Acesso
+<KbPriAcesso>:
+    id: _kb_pri_acesso
+    auto_dismiss: True
+    size_hint: (0.5, 0.5)
+    title: ''
+    separator_color: (0,0,0,0)
+    background: 'imagens/diversos/black.png'
+    background_color: (0,0,0,0)
+    FloatLayout:
+        pos_hint: {'center_x':0.5, 'center_y':0.5}
+        size_hint: (0.5, 0.5)
+        canvas:
+            Color:
+                rgba: 0.46,0.96,0.96,1
+            # linha externa da tela
+            Line:
+                rounded_rectangle: (_kb_pri_acesso.width/2, _kb_pri_acesso.height/2, _kb_pri_acesso.width, _kb_pri_acesso.height, 10, 100)
+            # caixa de texto senha
+            Line:
+                rounded_rectangle: (_kb_pri_acesso.width/1.2, _kb_pri_acesso.height/0.85, _kb_pri_acesso.width/3, _kb_pri_acesso.height/10, 10, 100)
+
+            # desenho teclado
+            # numero 7
+            Line:
+                rounded_rectangle: (_kb_pri_acesso.width/1.675, _kb_pri_acesso.height/1.0, _kb_pri_acesso.width/4, _kb_pri_acesso.height/10, 10, 100)
+            # numero 8
+            Line:
+                rounded_rectangle: (_kb_pri_acesso.width/1.15, _kb_pri_acesso.height/1.0, _kb_pri_acesso.width/4, _kb_pri_acesso.height/10, 10, 100)
+            # numero 9
+            Line:
+                rounded_rectangle: (_kb_pri_acesso.width/0.875, _kb_pri_acesso.height/1.0, _kb_pri_acesso.width/4, _kb_pri_acesso.height/10, 10, 100)
+            # numero 4
+            Line:
+                rounded_rectangle: (_kb_pri_acesso.width/1.675, _kb_pri_acesso.height/1.17, _kb_pri_acesso.width/4, _kb_pri_acesso.height/10, 10, 100)
+            # numero 5
+            Line:
+                rounded_rectangle: (_kb_pri_acesso.width/1.15, _kb_pri_acesso.height/1.17, _kb_pri_acesso.width/4, _kb_pri_acesso.height/10, 10, 100)
+            # numero 6
+            Line:
+                rounded_rectangle: (_kb_pri_acesso.width/0.875, _kb_pri_acesso.height/1.17, _kb_pri_acesso.width/4, _kb_pri_acesso.height/10, 10, 100)
+            # numero 1
+            Line:
+                rounded_rectangle: (_kb_pri_acesso.width/1.675, _kb_pri_acesso.height/1.40, _kb_pri_acesso.width/4, _kb_pri_acesso.height/10, 10, 100)
+            # numero 2
+            Line:
+                rounded_rectangle: (_kb_pri_acesso.width/1.15, _kb_pri_acesso.height/1.40, _kb_pri_acesso.width/4, _kb_pri_acesso.height/10, 10, 100)
+            # numero 3
+            Line:
+                rounded_rectangle: (_kb_pri_acesso.width/0.875, _kb_pri_acesso.height/1.40, _kb_pri_acesso.width/4, _kb_pri_acesso.height/10, 10, 100)
+            # numero 0
+            Line:
+                rounded_rectangle: (_kb_pri_acesso.width/1.675, _kb_pri_acesso.height/1.76, _kb_pri_acesso.width/4, _kb_pri_acesso.height/10, 10, 100)
+            # cancela
+            Line:
+                rounded_rectangle: (_kb_pri_acesso.width/1.15, _kb_pri_acesso.height/1.76, _kb_pri_acesso.width/4, _kb_pri_acesso.height/10, 10, 100)
+            # confirma
+            Line:
+                rounded_rectangle: (_kb_pri_acesso.width/0.875, _kb_pri_acesso.height/1.76, _kb_pri_acesso.width/4, _kb_pri_acesso.height/10, 10, 100)
+
+        Label:
+            text: root.txt_cabecalho
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.5, 'center_y':1.2}
+            font_size: _kb_pri_acesso.height/20
+            halign: 'center'
+
+        Label:
+            text: root.txt_acesso_usu_view
+            color: 0.46,0.96,0.96,1
+            pos_hint: {'center_x':0.5, 'center_y':0.94}
+            font_size: _kb_pri_acesso.height/16
+            halign: 'center'
+
+        Button:
+            text: '7'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_pri_acesso.width/1.63, _kb_pri_acesso.height/0.99
+            font_size: _kb_pri_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_priacesso('7')
+        Button:
+            text: '8'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_pri_acesso.width/1.135, _kb_pri_acesso.height/0.99
+            font_size: _kb_pri_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_priacesso('8')
+        Button:
+            text: '9'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_pri_acesso.width/0.865, _kb_pri_acesso.height/0.99
+            font_size: _kb_pri_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_priacesso('9')
+        Button:
+            text: '4'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_pri_acesso.width/1.63, _kb_pri_acesso.height/1.155
+            font_size: _kb_pri_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_priacesso('4')
+        Button:
+            text: '5'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_pri_acesso.width/1.135, _kb_pri_acesso.height/1.155
+            font_size: _kb_pri_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_priacesso('5')
+        Button:
+            text: '6'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_pri_acesso.width/0.865, _kb_pri_acesso.height/1.155
+            font_size: _kb_pri_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_priacesso('6')
+        Button:
+            text: '1'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_pri_acesso.width/1.63, _kb_pri_acesso.height/1.38
+            font_size: _kb_pri_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_priacesso('1')
+        Button:
+            text: '2'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_pri_acesso.width/1.135, _kb_pri_acesso.height/1.38
+            font_size: _kb_pri_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_priacesso('2')
+        Button:
+            text: '3'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_pri_acesso.width/0.865, _kb_pri_acesso.height/1.38
+            font_size: _kb_pri_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_priacesso('3')
+        Button:
+            text: '0'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_pri_acesso.width/1.63, _kb_pri_acesso.height/1.725
+            font_size: _kb_pri_acesso.height/12
+            halign: 'center'
+            on_release: root.kb_priacesso('0')
+        Button:
+            text: 'CANCELA'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_pri_acesso.width/1.135, _kb_pri_acesso.height/1.725
+            font_size: _kb_pri_acesso.height/12
+            halign: 'center'
+            on_release: root.dismiss()
+        Button:
+            text: 'CONFIRMA'
+            color: 0.46,0.96,0.96,1
+            background_normal: 'imagens/diversos/black.png'
+            size_hint: 0.45, 0.15
+            pos: _kb_pri_acesso.width/0.865, _kb_pri_acesso.height/1.725
+            font_size: _kb_pri_acesso.height/12
+            halign: 'center'
+            on_release:
+                if root.acesso_confirmado: \
+                self.dismiss()
+                app.root.switch_to('home')
+
+
+####################################################################################################
+
+<Abertura>:
+    name: 'abertura'
+    FloatLayout:
+        Image:
+            source: root.name_mv
+            #'imagens/mv_splash/teste.gif'
+            anim_delay: 0.05
+            size: self.texture_size
+            allow_stretch: True
+            keep_ratio: True
+            texture: self.texture
+            on_touch_up: Factory.KbAcesso().open() if root.tst_cad_acess else Factory.KbPriAcesso().open()
+            
+
